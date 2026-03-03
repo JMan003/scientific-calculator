@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Replace with your actual GitHub repository URL
-                git branch: 'main', url: 'https://github.com/YOUR_USERNAME/scientific-calculator.git'
+                git branch: 'main', url: 'https://github.com/JMan003/scientific-calculator.git'
             }
         }
         
