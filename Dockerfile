@@ -1,5 +1,10 @@
-# Use an official lightweight OpenJDK 11 image as the base
-FROM openjdk:11-jre-slim
+# Use the official Ubuntu image as the base
+FROM ubuntu:latest
+
+# Update package lists and install Java 11 (headless is smaller as it excludes GUI libraries)
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jre-headless && \
+    apt-get clean;
 
 # Set the working directory inside the container
 WORKDIR /app
