@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = 'jman003/scientific-calculator'
-        DOCKER_CREDS_ID = 'docker-hub-credentials'
+        DOCKER_CREDS_ID = 'DockerHubCred'
     }
     stages {
         stage('Checkout Code') {
