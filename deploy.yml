@@ -1,0 +1,22 @@
+---
+- name: Deploy Scientific Calculator
+  hosts: local
+  tasks:
+    - name: Pull the latest Docker image from Docker Hub
+      docker_image:
+        name: jman003/scientific-calculator
+        source: pull
+        tag: latest
+
+    - name: Ensure any old container is removed
+      docker_container:
+        name: spe-calculator
+        state: absent
+
+    - name: Run the new Docker container
+      docker_container:
+        name: spe-calculator
+        image: jman003/scientific-calculator:latest
+        state: started
+        interactive: yes
+        tty: yes
