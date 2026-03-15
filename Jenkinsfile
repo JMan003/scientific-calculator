@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Ensure this matches your GitHub repo URL
                 git branch: 'main', url: 'https://github.com/JMan003/scientific-calculator.git'
             }
         }
